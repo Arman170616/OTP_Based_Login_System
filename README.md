@@ -12,7 +12,6 @@ This project is a Django-based login system that uses One-Time Passwords (OTP) f
 - [Installation](#installation)
 - [Environment Variables](#environment-variables)
 - [Usage](#usage) 
-- [Test Case](#Testing the OTP System)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
