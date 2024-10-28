@@ -11,7 +11,8 @@ This project is a Django-based login system that uses One-Time Passwords (OTP) f
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Environment Variables](#environment-variables)
-- [Usage](#usage)
+- [Usage](#usage) 
+- [Test Case](#Testing the OTP System)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -98,6 +99,29 @@ python manage.py createsuperuser
 
 3. **Verify OTP**: Users will receive an OTP via SMS and can enter it to complete the login process.
 
+## Testing the OTP System
+
+### Request OTP
+
+To request an OTP, access the `request_otp_login` endpoint with the phone number as a query parameter:
+
+```bash
+GET /accounts/request-otp-login/?phone_number=+8801811302984
+```
+
+This will trigger the OTP SMS to be sent to the phone number.
+
+### Verify OTP
+
+After receiving the OTP on your phone, go to the `verify_otp_login` endpoint and provide the phone number and OTP as query parameters:
+
+```bash
+GET /accounts/verify-otp-login/?phone_number=+8801811302984&otp_code=123456
+```
+
+If the OTP matches, you’ll receive a "Login successful" message; otherwise, an error response.
+
+This setup should handle OTP-based login using mobile numbers with Twilio in Django!
 ## Contributing
 
 To contribute to this project:
